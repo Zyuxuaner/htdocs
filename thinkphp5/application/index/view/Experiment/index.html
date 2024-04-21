@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>新闻快讯</title>
+    <title>实验教学</title>
 
         <script src="/thinkphp5/public/static/jquery-3.5.1.slim.min.js"  crossorigin="anonymous"></script>
         <script src="/thinkphp5/public/static/bootstrap-4.6.2.bundle.min.js" crossorigin="anonymous"></script>
@@ -44,6 +44,7 @@
     .yz-dropdown:hover .dropbtn {
         background-color: #953998;
     }
+    
     /*垂直导航栏样式*/
     .yz-vertical-nav {
         list-style-type: none;
@@ -69,6 +70,13 @@
         background-color: #d474d1;
         color: white;
     }
+
+    /* 垂直导航第一项 */
+    .yz-vertical-nav .first-item {
+    height: 60px; /* 设置你想要的高度 */
+    line-height: 60px; /* 让文本垂直居中 */
+    }
+
     /*设置单元格内间距*/
     table th, table td {
         padding:10px;
@@ -155,32 +163,36 @@
 
     <!-- 增加垂直导航栏 -->
     <ul class="yz-vertical-nav">
-        <li><a class="active" href="#home">新闻动态</a></li>
-        <li><a href="{:url('News/index')}">新闻快讯</a></li>
-        <li><a href="{:url('Notice/index')}">公告通知</a></li>
+        <li class="first-item"><a class="active" href="#home">实验教学</a></li>
+        <li><a href="#">专业实验</a></li>
+        <li><a href="#">创新创业实验</a></li>
+        <li><a href="#">跨专业综合实验</a></li>
     </ul>
 
     <div style="margin-left:25%;padding:1px 16px;">   
     <div class="breadcrumb">
-        <h2 class="inline-header breadcrumb-right">新闻快讯</h2>
+        <h2 class="inline-header breadcrumb-right">实验教学</h2>
     <span class="inline-span"><a href="{:url('Web/index')}">网站首页</a></span>
     </div>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <a href="#"><h1 class="display-4">重要公告</h1></a>
+          <a href="#"><h1 class="display-4">置顶新闻</h1></a>
           <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
           <ul class="list-unstyled">
-            <li><a href="#" class="bullet-text">天津市教学名师、天津市级教学团队带头人阎文兵</a></li>
-            <li><a href="#" class="bullet-text">国家级技能大师、天津市首届“海河工匠”、我校2002届校友李基伍-教育学院</a></li>
+            <li><a href="#" class="bullet-text">天津职业技术师范大学科学技术协会第一次会员大会暨工作会议成功召开</a></li>
+            <li><a href="#" class="bullet-text">天津职业技术师范大学赵文平教授应邀到我院开展专题讲座-教育学院</a></li>
             <li><a href="#" class="bullet-text">校领导率团赴天津职业技术师范大学调研</a></li>
             <li><a href="#" class="bullet-text">天津职业技术师范大学助力第45届世界技能大赛中国代表团再创辉煌</a></li>
             <li><a href="#" class="bullet-text">国家国际发展合作署副署长赵峰涛一行到天职师大调研</a></li>
+            <li><a href="#" class="bullet-text">云程发轫 万里可期!天职师大举行2024年研究生毕业典礼暨学位授予</a></li>
+            <li><a href="#" class="bullet-text">天津职业技术师范大学科学技术协会第一次会员大会暨工作会议成功召开</a></li>
+            <li><a href="#" class="bullet-text">天津职业技术师范大学科学技术协会第一次会员大会暨工作会议成功召开</a></li>
           </ul>          
         </div>
 
         <div class="mt-5">
             <nav aria-label="...">
-                <ul class="pagination pagination-sm justify-content-center">
+                <ul class="pagination pagination-sm justify-content-center mt-3">
                   <li class="page-item disabled">
                     <span class="page-link">上一页</span>
                   </li>
@@ -194,7 +206,8 @@
                   </li>
                 </ul>
               </nav>
-        </div>  
+        </div>
+        
       </div>
 </body>
 </html>

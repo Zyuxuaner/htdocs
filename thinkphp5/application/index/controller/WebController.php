@@ -1,11 +1,11 @@
 <?php
 namespace app\index\controller; //指出该文件的位置
 use think\Controller;   //用于向V层进行数据的传递
-use app\common\model\Web;   //教师模型
+use app\common\model\Web;   //首页模型
 use think\Request;  //引用Request
 
 /**
- * 教师管理，继承think\Controller后，就可以利用V层对数据进行打包了
+ * 网页首页，继承think\Controller后，就可以利用V层对数据进行打包了
  */
 class WebController extends Controller
 {
