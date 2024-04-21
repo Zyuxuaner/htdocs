@@ -8,35 +8,21 @@
         <script src="/thinkphp5/public/static/bootstrap-4.6.2.bundle.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="/thinkphp5/public/static/bootstrap-4.6.2-dist/css/bootstrap.min.css">
         <style>
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-            }
-
-            li {
-                float: left;
-            }
-
-            li a, .dropbtn {
-                display: inline-block;
+            .yz-dropbtn {
+                background-color: #9e449c;
                 color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
             }
 
-            li a:hover, .dropdown:hover, .dropbtn {
-                background-color: #111;
-            }
-
-            .dropdown {
+            .yz-dropdown {
+                position: relative;
                 display: inline-block;
             }
 
-            .dropdown-content {
+            .yz-dropdown-content {
                 display: none;
                 position: absolute;
                 background-color: #f9f9f9;
@@ -44,17 +30,21 @@
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             }
 
-            .dropdown-content a {
+            .yz-dropdown-content a {
                 color: black;
                 padding: 12px 16px;
                 text-decoration: none;
                 display: block;
             }
 
-            .dropdown-content a:hover {background-color: #f1f1f1}
+            .yz-dropdown-content a:hover {background-color: #f1f1f1}
 
-            .dropdown:hover .dropdown-content {
+            .yz-dropdown:hover .dropdown-content {
                 display: block;
+            }
+
+            .yz-dropdown:hover .dropbtn {
+                background-color: #a3539b;
             }
 
             /*新闻快讯和当前位置在一行上显示*/
@@ -85,49 +75,48 @@
             width: 100%;
             object-fit: cover;
                 }
-            /*文字省略*/
-            .ellipsis {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+
+            /* 内容文字大小 */
+            .font {
+                font-size: 19px; /* 设置字体大小 */
+                
+                white-space: nowrap; /* 防止内容换行 */
+                overflow: hidden; /* 隐藏溢出部分 */
+                text-overflow: ellipsis; /* 使用省略号来表示溢出 */
             }
 
         </style>
     </head>
 
-    <body class="container" style="width: 1300px;">
+    <body class="container">
 
+        <!-- 校徽 -->
+        <div style="width: 1200px;height: 175px;">
+            <img style="height: 170px;width: 1200px;"
+                src="/thinkphp5/public/static/picture/10.png" />
+        </div>
         <!-- 菜单 -->
         <div class="row">
             <div class="col-md-12">
                     <div class="container-fluid">
-                        <ul>
-                            <li><a class="active" href="#home">天津职业技术师范大学</a></li>
-                            <li><a href="#news">网页首页</a></li>
-                            <div class="dropdown">
-                                <a href="" class="dropbtn">新闻动态</a>
-                                <div class="dropdown-content">
-                                <a href="#">新闻快讯</a>
-                                <a href="#">新闻公告</a>
-                                </div>
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="http://www.mengyunzhi.com">天津职业技术师范大学</a>
+                        </div>
+                        <!-- Collect the nav links,form, and other content for toggling-->
+                        <div class="yz-dropdown">
+                            <button class="yz-dropbtn">首页</button>
+                            <button class="yz-dropbtn">新闻动态</button>
+                            <div class="yz-dropdown-content">
+                              <a href="#">新闻快讯</a>
+                              <a href="#">公告通知</a>
                             </div>
-                            <div class="dropdown">
-                                <a href="#" class="dropbtn">新闻动态</a>
-                                <div class="dropdown-content">
-                                <a href="#">链接 1</a>
-                                <a href="#">链接 2</a>
-                                <a href="#">链接 3</a>
-                                </div>
+                            <button class="yz-dropbtn">实验教学</button>
+                            <div class="yz-dropdown-content">
+                              <a href="#">专业教学</a>
+                              <a href="#">创新创业实验</a>
+                              <a href="#">跨专业综合实验</a>
                             </div>
-                            <div class="dropdown">
-                                <a href="#" class="dropbtn">新闻动态</a>
-                                <div class="dropdown-content">
-                                <a href="#">链接 1</a>
-                                <a href="#">链接 2</a>
-                                <a href="#">链接 3</a>
-                                </div>
-                            </div>
-                        </ul>
+                            <button class="yz-dropbtn">资料下载</button>
                         <!-- /.navbar-collapse -->
                     </div>
                 <!-- /.container-fluid -->
@@ -171,12 +160,13 @@
                 <div class="col-md-8 mb-3">
                     <div class="breadcrumb">
                         <h2 class="inline-header breadcrumb-right">新闻快讯</h2>
-                        <span class="inline-span"><a href="#1">网站首页</a></span> 
+                        <span class="inline-span"><a href="{:url('News/index')}">快速进入</a></span> 
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="breadcrumb">
-                        <h2 class="inline-header breadcrumb-left">VR中心</h2>
+                        <h2 class="inline-header breadcrumb-left">实验教学</h2>
+                        <span class="inline-span"><a href="{:url('Experiment/index')}">快速进入</a></span> 
                     </div>
                 </div>
             </div>
@@ -205,13 +195,13 @@
                       </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="ellipsis">
-                        <a href="#"><p class="h6">天津职业技术师范大学科学技术协会第一次会员大会暨工作会议成功召开</p></a>
-                        <a href="#"><p class="h6">天津职业技术师范大学赵文平教授应邀到我院开展专题讲座-教育学院</p></a>
-                        <a href="#"><p class="h6">校领导率团赴天津职业技术师范大学调研</p></a>
-                        <a href="#"><p class="h6">天津职业技术师范大学助力第45届世界技能大赛中国代表团再创辉煌</p></a>
-                        <a href="#"><p class="h6">天津职业技术师范大学</p></a>
-                        <a href="#"><p class="h6">天津职业技术师范大学</p></a>
+                    <div>
+                        <a href="#"><p class="font">天津职业技术师范大学科学技术协会第一次会员大会暨工作会议成功召开</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学赵文平教授应邀到我院开展专题讲座-教育学院</p></a>
+                        <a href="#"><p class="font">校领导率团赴天津职业技术师范大学调研</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学助力第45届世界技能大赛中国代表团再创辉煌</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学</p></a>
                     </div>
                 </div>
             </div>
@@ -223,33 +213,33 @@
                 <div class="col-sm mb-1">
                     <div class="breadcrumb">
                         <h2 class="inline-header breadcrumb-right">通知公告</h2>
-                        <span class="inline-span"><a href="#1">More</a></span> 
+                        <span class="inline-span"><a href="{:url('Notice/index')}">快速进入</a></span> 
                     </div>
                     <div>
-                        <a href="#"><li>A座304实验室正在维修,暂停使用</li></a>
-                        <a href="#"><li>B座406实验室发现有遗失的笔记本电脑</li></a>
-                        <a href="#"><li>A座304实验室正在维修,暂停使用</li></a>
-                        <a href="#"><li>A座304实验室正在维修,暂停使用</li></a>
-                        <a href="#"><li>A座304实验室正在维修,暂停使用</li></a>
-                        <a href="#"><li>A座304实验室正在维修,暂停使用</li></a>
-                        <a href="#"><li>A座304实验室正在维修,暂停使用</li></a>
-                        <a href="#"><li>A座304实验室正在维修,暂停使用</li></a>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">B座406实验室发现有遗失的笔记本电脑</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">关于组织教师深入学习宣传贯彻习近平总书记视察天津重要讲话精神的通知</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
                     </div>
                 </div>
                 <div class="col-sm mb-1">
                     <div class="breadcrumb">
                         <h2 class="inline-header breadcrumb-right">资料下载</h2>
-                        <span class="inline-span"><a href="#1">More</a></span> 
+                        <span class="inline-span"><a href="{:url('Download/index')}">快速进入</a></span> 
                     </div>
                     <div>
-                        <a href="#"><li>实验1报告模版、教学视频、注意事项</li></a>
-                        <a href="#"><li>实验2报告模版、教学视频、注意事项</li></a>
-                        <a href="#"><li>实验3报告模版、教学视频、注意事项</li></a>
-                        <a href="#"><li>实验4报告模版、教学视频、注意事项</li></a>
-                        <a href="#"><li>实验5报告模版、教学视频、注意事项</li></a>
-                        <a href="#"><li>实验6报告模版、教学视频、注意事项</li></a>
-                        <a href="#"><li>实验7报告模版、教学视频、注意事项</li></a>
-                        <a href="#"><li>实验8报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验1报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验2报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验3报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验4报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验5报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验6报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验7报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验8报告模版、教学视频、注意事项</li></a>
                     </div>
                 </div>
                 <div class="col-sm mb-1">
@@ -257,34 +247,18 @@
                         <h2 class="inline-header breadcrumb-right">实验室简介</h2>
                         <span class="inline-span"><a href="#1">More</a></span> 
                     </div>
+                    <div>
+                        <img style="width: 155px;height: 135px;"
+                            src="/thinkphp5/public/static/picture/12.png" />
+                    </div>
+                    <div class="mt-3">
+                        <img style="width: 155px;height: 135px;"
+                            src="/thinkphp5/public/static/picture/13.jpg" />
+                    </div>
                 </div>
             </div>
         </div>
 
         
     </body>
-    <script>
-        // 获取所有的下拉菜单按钮
-        var dropdowns = document.querySelectorAll('.yz-dropdown');
-    
-        // 遍历所有下拉菜单按钮
-        dropdowns.forEach(function(dropdown) {
-            // 添加鼠标悬停事件监听器
-            dropdown.addEventListener('mouseover', function() {
-                // 显示下拉菜单内容
-                dropdown.querySelector('.yz-dropdown-content').style.display = 'block';
-                // 修改按钮背景颜色
-                dropdown.querySelector('.yz-dropbtn').style.backgroundColor = '#9400D3';
-            });
-    
-            // 添加鼠标离开事件监听器
-            dropdown.addEventListener('mouseout', function() {
-                // 隐藏下拉菜单内容
-                dropdown.querySelector('.yz-dropdown-content').style.display = 'none';
-                // 恢复按钮背景颜色
-                dropdown.querySelector('.yz-dropbtn').style.backgroundColor = '#BA55D3';
-            });
-        });
-    </script>
-    
 </html>
