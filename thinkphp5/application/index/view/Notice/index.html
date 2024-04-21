@@ -108,41 +108,32 @@
   <!-- 菜单导航 -->
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="http://www.mengyunzhi.com">天津职业技术师范大学</a>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">天津职业技术师范大学</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{:url('Web/index')}">网站首页</a>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">新闻动态</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{:url('News/index')}">新闻快讯</a>
+                    <a class="dropdown-item" href="{:url('Notice/index')}">通知公告</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{:url('Experiment/index')}" role="button" aria-expanded="false">实验教学</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">专业实验</a>
+                      <a class="dropdown-item" href="#">创新创业实验</a>
+                      <a class="dropdown-item" href="#">跨专业综合实验</a>
                     </div>
-                    <!--Collect the nav links, forms, and other content for toggling-->
-                    <div class="yz-collapse yz-navbar-collapse">
-                        <ul class="yz-nav yz-navbar-nav">
-                            <div class="yz-dropdown">                        
-                                <button class="yz-dropbtn"><a href="{:url('Ad/index')}">首页</a></button>
-                            </div>
-                            <div class="yz-dropdown">
-                                <button class="yz-dropbtn">新闻动态</button>
-                                <div class="yz-dropdown-content" style="z-index: 3">
-                                    <a href="{:url('News/news')}">新闻快讯</a>
-                                    <a href="{:url('News/notice')}">通知公告</a>
-                                </div>                
-                            </div>
-                            <div class="yz-dropdown">
-                            <button class="yz-dropbtn">实验教学</button>
-                                <div class="yz-dropdown-content" style="z-index: 3">
-                                  <a href="#">专业实验</a>
-                                  <a href="#">创新创业实验</a>
-                                  <a href="#">跨专业综合实验</a>
-                                </div>                
-                            </div>
-                            <div class="yz-dropdown">
-                                <button class="yz-dropbtn">资料下载</button>
-                            </div>                          
-                        </ul>
-                        </div>
-                    <!--/.navbar-collapse-->
-                </div>
-                <!--/.container-fluid-->
-            </nav>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{:url('Download/index')}">资料下载</a>
+                </li>
+              </ul>
         </div>
     </div>
     <!--导航结束-->
