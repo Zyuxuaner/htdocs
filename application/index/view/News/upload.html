@@ -137,6 +137,9 @@
                                 </div>
                             <div class="yz-dropdown">
                                 <button class="yz-dropbtn">资料下载</button>
+                            </div>
+                            <div class="yz-dropdown">
+                                <button class="yz-dropbtn"><a href="{:url('Photo/index')}">上传照片</a></button>
                             </div>                          
                         </ul>
                         </div>
@@ -179,8 +182,8 @@
                 </tr>          
                 {volist name="news" id="newsId" key="key"}
                 <tr>
-                    <th>{$newsId['Description']}</th>
-                    <th>{$newsId['UploadDate']}</th>
+                    <th>{$newsId->getData('Description')}</th>
+                    <th>{$newsId->getData('UploadDate')}</th>
                     <th>删除&nbsp;编辑</th>
                 </tr>
                 {/volist}

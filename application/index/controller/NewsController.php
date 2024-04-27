@@ -45,15 +45,16 @@ class NewsController extends Controller
                 // 获取保存的文件名
                 $fileName = $info->getSaveName();                
                 // 获取文件扩展名
-                $fileExtension = $info->getExtension();               
-                // 保存文件信息到数据库
-                $saveResult = Db::name('news')->insert([
+                $fileExtension = $info->getExtension();  
+                $news = new News();
+                $data = [
                     'NewsName' => $fileName,
                     'NewsPath' => $info->getPathname(),
-                    'Extension' => $fileExtension,
                     'Description' => $description,
+                    'Extension' => $fileExtension,
                     'UploadDate' => $uploadDate,
-                ]);                
+                ];
+                $saveResult = $news->save($data);             
                 if ($saveResult) 
                 {
                     // 保存成功
@@ -76,8 +77,9 @@ class NewsController extends Controller
         //return $this->fetch();
     }
     public function upload() {
-        $news = Db::name('news')->select();
+        $news = News::select();
         $this->assign('news', $news);
         return $this->fetch();
+        
     }
 }
