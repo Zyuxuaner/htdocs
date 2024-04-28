@@ -14,6 +14,29 @@ class NewsController extends Controller
     {
         return $this->fetch();
     }
+    /**
+     * 删除
+     */
+    public function delete() {
+        //获取传入的id值
+        $id = Request::instance()->param('id/d');
+        if (is_null($id) || 0 === $id) {
+            return $this->error('为获取到ID信息');
+        }
+        //获取要删除的对象
+        $News = News::get($id);
+        //要删除的对象不存在
+        if (is_null($News)) {
+            return $this->error('不存在id为' . $id . '的新闻，删除失败');
+        }
+
+        //删除对象
+        if (!$News->delete()) {
+            return $this->error('删除失败：' . $News->getError());
+        }
+        //跳转
+        return $this->success('删除成功', url('upload'));
+    }
     public function index()
     {
         $News = new News;
@@ -77,6 +100,7 @@ class NewsController extends Controller
         //return $this->fetch();
     }
     public function upload() {
+        $News = new News();
         $news = News::select();
         $this->assign('news', $news);
         return $this->fetch();

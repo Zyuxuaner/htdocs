@@ -139,7 +139,7 @@
                                 <button class="yz-dropbtn">资料下载</button>
                             </div>
                             <div class="yz-dropdown">
-                                <button class="yz-dropbtn"><a href="{:url('Photo/index')}">上传照片</a></button>
+                                <button class="yz-dropbtn"><a href="{:url('Photo/add')}">上传照片</a></button>
                             </div>                          
                         </ul>
                         </div>
@@ -180,11 +180,11 @@
                     <th>新闻时间</th>
                     <th>操作</th>
                 </tr>          
-                {volist name="news" id="newsId" key="key"}
+                {volist name="news" id="newsItem" key="key"}
                 <tr>
-                    <th>{$newsId->getData('Description')}</th>
-                    <th>{$newsId->getData('UploadDate')}</th>
-                    <th>删除&nbsp;编辑</th>
+                    <th>{$newsItem.Description}</th>
+                    <th>{$newsItem.UploadDate}</th>
+                    <th><a href="{:url('delete', ['id' => $newsItem.NewsId])}">删除</a>&nbsp;编辑</th>
                 </tr>
                 {/volist}
             </table>
