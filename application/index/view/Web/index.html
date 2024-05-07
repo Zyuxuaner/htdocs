@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>网站首页</title>
+        
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"  crossorigin="anonymous"></script> -->
+        <!-- <script src="/thinkphp5/public/static/bootstrap-4.6.2.bundle.min.js" crossorigin="anonymous"></script> -->
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" type="text/css" href="/thinkphp5/public/static/bootstrap-4.6.2-dist/css/bootstrap.min.css"> -->
+        <style>
+            .yz-dropbtn {
+                background-color: #9e449c;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .yz-dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .yz-dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+
+            .yz-dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .yz-dropdown-content a:hover {background-color: #f1f1f1}
+
+            .yz-dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .yz-dropdown:hover .dropbtn {
+                background-color: #a3539b;
+            }
+
+            /*新闻快讯和当前位置在一行上显示*/
+            .inline-header, .inline-span {
+            display: inline-block;
+            vertical-align: middle; /* 如果需要垂直居中对齐 */
+            }
+
+            .inline-header {
+                margin-right: 10px; /* 如果需要一些间距 */
+            }
+                .breadcrumb {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .breadcrumb-left {
+                text-align: left;
+            }
+
+            .breadcrumb-right {
+                text-align: right;
+            }
+            /*图片轮播大小自适应*/
+            .wra{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+                }
+
+            /* 内容文字大小 */
+            .font {
+                font-size: 19px; /* 设置字体大小 */
+                
+                white-space: nowrap; /* 防止内容换行 */
+                overflow: hidden; /* 隐藏溢出部分 */
+                text-overflow: ellipsis; /* 使用省略号来表示溢出 */
+            }
+
+        </style>
+    </head>
+
+    <body class="container">
+
+        <!-- 校徽 -->
+        <div style="width: 1200px;height: 175px;">
+            <img style="height: 170px;width: 1200px;"
+                src="/thinkphp5/public/static/picture/10.png" />
+        </div>
+        <!-- 菜单 -->
+        <div class="row">
+            <div class="col-md-12">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="http://www.mengyunzhi.com">天津职业技术师范大学</a>
+                        </div>
+                        <!-- Collect the nav links,form, and other content for toggling-->
+                        <div class="yz-dropdown">
+                            <button class="yz-dropbtn">首页</button>
+                            <button class="yz-dropbtn">新闻动态</button>
+                            <div class="yz-dropdown-content">
+                              <a href="#">新闻快讯</a>
+                              <a href="#">公告通知</a>
+                            </div>
+                            <button class="yz-dropbtn">实验教学</button>
+                            <div class="yz-dropdown-content">
+                              <a href="#">专业教学</a>
+                              <a href="#">创新创业实验</a>
+                              <a href="#">跨专业综合实验</a>
+                            </div>
+                            <button class="yz-dropbtn">资料下载</button>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                <!-- /.container-fluid -->
+            </div>
+        </div>
+
+        <!-- 图片轮播 -->
+        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img style="height: 100%;" src="/thinkphp5/public/static/picture/4.jpeg"  class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img style="height: 100%;" src="/thinkphp5/public/static/picture/2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img style="height: 100%;" src="/thinkphp5/public/static/picture/3.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <!-- 图片轮播按钮 -->
+            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        
+        <!-- 图片轮播完 -->
+
+        <!-- part.1 -->
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-8 mb-3">
+                    <div class="breadcrumb">
+                        <h2 class="inline-header breadcrumb-right">新闻快讯</h2>
+                        <span class="inline-span"><a href="{:url('News/index')}">快速进入</a></span> 
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="breadcrumb">
+                        <h2 class="inline-header breadcrumb-left">实验教学12312</h2>
+                        <span class="inline-span"><a href="{:url('Experiment/index')}">快速进入</a></span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 快讯内容 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators center">
+                          <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img style="height: 100%;" src="/thinkphp5/public/static/picture/5.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img style="height: 100%;" src="/thinkphp5/public/static/picture/6.JPG" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img style="height: 100%;" src="/thinkphp5/public/static/picture/7.jpeg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div>
+                        <a href="#"><p class="font">天津职业技术师范大学科学技术协会第一次会员大会暨工作会议成功召开</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学赵文平教授应邀到我院开展专题讲座-教育学院</p></a>
+                        <a href="#"><p class="font">校领导率团赴天津职业技术师范大学调研</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学助力第45届世界技能大赛中国代表团再创辉煌</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学</p></a>
+                        <a href="#"><p class="font">天津职业技术师范大学</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- part.2 -->
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-sm mb-1">
+                    <div class="breadcrumb">
+                        <h2 class="inline-header breadcrumb-right">通知公告</h2>
+                        <span class="inline-span"><a href="{:url('Notice/index')}">快速进入</a></span> 
+                    </div>
+                    <div>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">B座406实验室发现有遗失的笔记本电脑</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">关于组织教师深入学习宣传贯彻习近平总书记视察天津重要讲话精神的通知</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                        <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+                    </div>
+                </div>
+                <div class="col-sm mb-1">
+                    <div class="breadcrumb">
+                        <h2 class="inline-header breadcrumb-right">资料下载</h2>
+                        <span class="inline-span"><a href="{:url('Download/index')}">快速进入</a></span> 
+                    </div>
+                    <div>
+                        <a href="#"><li class="font">实验1报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验2报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验3报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验4报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验5报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验6报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验7报告模版、教学视频、注意事项</li></a>
+                        <a href="#"><li class="font">实验8报告模版、教学视频、注意事项</li></a>
+                    </div>
+                </div>
+                <div class="col-sm mb-1">
+                    <div class="breadcrumb">
+                        <h2 class="inline-header breadcrumb-right">实验室简介</h2>
+                        <span class="inline-span"><a href="#1">More</a></span> 
+                    </div>
+                    <div>
+                        <img style="width: 155px;height: 135px;"
+                            src="/thinkphp5/public/static/picture/12.png" />
+                    </div>
+                    <div class="mt-3">
+                        <img style="width: 155px;height: 135px;"
+                            src="/thinkphp5/public/static/picture/13.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </body>
+</html>

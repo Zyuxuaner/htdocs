@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <title>网站首页</title>
         
-        <script src="/thinkphp5/public/static/jquery-3.5.1.slim.min.js"  crossorigin="anonymous"></script>
-        <script src="/thinkphp5/public/static/bootstrap-4.6.2.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="/thinkphp5/public/static/bootstrap-4.6.2-dist/jquery-3.5.1.slim.min.js"  crossorigin="anonymous"></script>
+        <script src="/thinkphp5/public/static/bootstrap-4.6.2-dist/bootstrap-4.6.2.bundle.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="/thinkphp5/public/static/bootstrap-4.6.2-dist/css/bootstrap.min.css">
         <style>
             .yz-dropbtn {
@@ -84,6 +84,10 @@
                 overflow: hidden; /* 隐藏溢出部分 */
                 text-overflow: ellipsis; /* 使用省略号来表示溢出 */
             }
+            .navbar-nav .nav-link {
+                font-size: 30px; /* 你想要的字体大小 */
+            }
+
 
         </style>
     </head>
@@ -98,6 +102,7 @@
         <!-- 菜单 -->
         <div class="row">
             <div class="col-md-12">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <div class="container-fluid">
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -166,6 +171,44 @@
                     </li>
                   </ul>
 >>>>>>> origin/3
+=======
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="{:url('Web/index')}">
+                        <img src="/thinkphp5/public/static/picture/top.jpg" width="55" height="55" alt="首页">
+                    </a>
+                   
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{:url('News/index')}" role="button" data-toggle="dropdown" aria-expanded="false">
+                              新闻动态
+                            </a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{:url('News/index')}">新闻快讯</a>
+                              <a class="dropdown-item" href="{:url('Notice/index')}">通知公告</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{:url('Experiment/index')}" role="button" data-toggle="dropdown" aria-expanded="false">
+                              实验教学
+                            </a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{:url('Experiment/index')}">专业实验</a>
+                              <a class="dropdown-item" href="#">创新创业实验</a>
+                              <a class="dropdown-item" href="#">跨专业综合实验</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{:url('Download/index')}">资料下载</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled">天津职业技术师范大学</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+>>>>>>> origin/main
         </div>
 
         <!-- 图片轮播 -->
@@ -264,7 +307,11 @@
                         <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
                         <li class="font"><a href="#">B座406实验室发现有遗失的笔记本电脑</a></li>
                         <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
+<<<<<<< HEAD
                         <li class="font"><a href="#">关于组织教师深入学习宣传贯彻习</a></li>
+=======
+                        <li class="font"><a href="#">关于组织教师深入学习宣传贯彻习近</a></li>
+>>>>>>> origin/main
                         <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
                         <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
                         <li class="font"><a href="#">A座304实验室正在维修,暂停使用</a></li>
